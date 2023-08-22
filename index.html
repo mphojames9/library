@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="library_container">
+        <div class="library_header">
+            <div class="library_header-center">
+            <h1 class="headerText">Library</h1>
+            <button class="login">Login</button>
+        </div>
+        </div>
+        <div class="library_content">
+            <h1 class="addBtn" onclick="addTasks()">+ Add Book</h1>
+            <div class="bookHolder">
+
+            </div>
+        </div>
+    </div>
+    <div class="inputWrapper">
+    <div class="input_section">
+        <div class="close" onclick="closeInput()">x</div>
+        <h2 class="input_header">Add new book</h2>
+        <input id="title" type="text" placeholder=" Title"></input>
+        <input id="author" type="text" placeholder=" author"></input>
+        <input id="pages" type="number" min="1" Max="1000" placeholder=" Pages"></input>
+        <div class="readCheck">
+            <p>Have you read it?</p>
+            <div class="check" onclick="checker()"></div>
+        </div>
+        <button class="submit" onclick="submitTask()">Submit</button>
+    </div>
+</div>
+</body>
+</html>
