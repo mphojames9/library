@@ -1,270 +1,159 @@
-*{
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    background-color: rgb(209, 209, 223);
-    position: relative;
-}
-
-.library_header {
-    min-height: 100px;
-    height: fit-content;
-    background-color: rgb(242, 240, 245);
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.658);
+    background-color: rgba(213, 231, 225, 0.733);
     display: flex;
-    justify-content: center;
-    padding: .5em;
-}
-
-.library_header-center {
-    max-width: 1200px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-
 }
 
-.headerText {
+h1 {
+    background-color: rgb(144, 144, 206);
+    width: 100%;
+    height: 70px;
     text-align: center;
-    font-size: 3em;
-    font-weight: bolder;
+    padding: 15px;
+    box-shadow: .5em .5em 1em rgba(0, 0, 0, 0.589);
 }
 
-.login {
-    width: 75px;
-    height: 35px;
-    border-radius: 5px;
-    border: none;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.884);
-    cursor: pointer;
-    transition: 250ms;
-    font-weight: bolder;
-    background-color: white;
-}
-
-.login:hover {
-    transform: scale(1.025);
-}
-
-.library_content {
-width: 100%;
-max-width: 1200px;
-margin: 0 auto;
-
-}
-
-.addBtn {
+#addBook {
+    margin: 1em;
     width: fit-content;
-    height: fit-content;
-    margin: .5em auto;
+    border-bottom: 1px solid red;
     cursor: pointer;
+    transition: ease-in-out;
 }
 
-.addBtn:hover {
-    opacity: 0.7;
+#addBook:active {
+    transform: scale(0.99);
 }
 
-.bookHolder {
-    width: 100%;
-    min-height: 500px;
-    height: fit-content;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 3em;
-}
-
-.book {
-    width: 250px;
-    background-color: rgb(255, 255, 255);
-    text-align: center;
-    height: 280px;
-    font-size: 1.5em;
-    font-weight: 400;
-    border-radius: 10px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.952);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    padding: .25em;
-}
-
-.readStatus {
-    background-color: rgba(216, 56, 56, 0.658);
-    width: 230px;
-    margin: 0 auto;
-    padding: 0.15em;
-    border-radius: 5px;
-    font-size: .85em;
-    cursor: pointer;
-    content: "Not Read";
-}
-
-.readStatus-yes {
-    background-color: rgba(57, 207, 43, 0.658);
-    width: 230px;
-    margin: 0 auto;
-    padding: 0.15em;
-    border-radius: 5px;
-    font-size: .85em;
-    cursor: pointer;
-    content: "Read";
-}
-
-.removeBtn {
-    background-color: rgb(209, 209, 223);
-    width: 230px;
-    margin: 0 auto;
-    padding: 0.15em;
-    border-radius: 5px;
-    font-size: .85em;
-    border: none;
-    cursor: pointer;
-}
-
-.readStatus:hover, .removeBtn:hover {
-    opacity: 0.9;
-}
-
-.input_header {
-    padding: .75em;
-}
-
-.input_section {
+.form {
     max-width: 300px;
-    width: 100%;
-    height: 250px;
+    width:90% ;
+    min-height: 300px;
     height: fit-content;
+    background-color: rgb(144, 144, 206);
+    text-align: center;
     display: flex;
     flex-direction: column;
-    background-color: rgb(209, 209, 223);
-    text-align: center;
-    padding: 1em;
-    border-radius: 5px;
-    position: relative;
-}
-
-.submit {
-    border: none;
-    width: 80%;
-    margin: .5em auto;
-    height: 35px;
-    background-color: rgba(14, 87, 116, 0.842);
+    box-shadow: .5em .5em 1em rgba(0, 0, 0, 0.589);
     border-radius: 10px;
-    cursor: pointer;
-    color: white;
-    letter-spacing: 3.5px;
-}
-
-.submit:hover {
-    opacity: 0.9;
+    padding: 10px;
 }
 
 input {
-    border: none;
-    width: 80%;
-    margin: .5em auto;
-    height: 35px;
+    margin-bottom: 10px;
+    margin-top: 2.5px;
     border-radius: 10px;
-    padding: .25em;
-    font-size: 1em;
+    border: 1px solid rgba(255, 0, 0, 0.527);
+    height: 2em;
+    text-align: center;
 }
 
-.inputWrapper {
-    background-color: rgba(0, 0, 0, 0.781);
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    display: none;
+.checkBox {
+    display: flex;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+    font-weight: bold;
 }
 
-.visible {
+.checkBox input {
+    width: 1.5em;
+    margin-top: 8px;
+}
+
+#submit {
+    background-color: rgba(55, 120, 163, 0.911);
+    border: none;
+    cursor: pointer;
+    color: white;
+    letter-spacing: 2px;
+}
+
+#submit:hover {
+    opacity: 0.9;
+}
+
+.bookStorage {
+    min-height: 200px;
+    max-width: 900px;
+    width: 100%;
+    height: min-content;
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 7.5px;
+}
+
+.bookCard {
+    max-width: 225px;
+    width: 100%;
+    height: 225px;
+    border-radius: 10px;
+    background-color: rgba(172, 204, 193, 0.733);
+    box-shadow: .5em .5em 1em rgba(0, 0, 0, 0.589);
     display: flex;
-    animation: 100ms fade;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: .75em;
+    border: 3px solid rgb(103, 103, 172);
     margin: 0 auto;
 }
 
-@keyframes fade{
-    0% {
-        width: 1%;
-        height: 1vh;
-    }
-
-    100% {
-        width: 100%;
-        height: 100vh;
-    }
+.bookTitle {
+    font-size: 1.5em;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.651);
 }
 
-.readCheck {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 10px;
+.bookAuthor {
+    font-weight: 500;
 }
 
-.check {
-    background-color: white;
-    width: 15px;
-    height: 15px;
-    border: 1px solid black;
+.readStatus {
+    border: 2px solid rgba(255, 0, 0, 0.589);
+    border-radius: 5px;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    border-style: groove;
+    cursor: pointer;
+
+}
+
+button {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    width: 80px;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.808);
+    margin-top: -1em;
+    color: white;
     cursor: pointer;
 }
 
-.close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    margin: .2em;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.close:hover {
-    opacity: .9;
-    background-color: rgb(183, 183, 207);
-}
-
-.checked {
-    background-color: rgb(21, 223, 21);
-}
-
-@media (max-width:885px) {
-    .book {
-        width: 330px;
-    }
-
-    .bookHolder {
-        padding: 2em;
+@media (max-width:1000px){
+    .bookStorage {
+        grid-template-columns: repeat(3,1fr);
     }
 }
 
-@media (max-width:770px) {
-    .book {
-        width: 270px;
-    }
-    
-    .bookHolder {
-        padding: 1em;
+@media (max-width:650px){
+    .bookStorage {
+        grid-template-columns: repeat(2,1fr);
     }
 }
 
-@media (max-width:620px) {
-    .book {
-        width: 100%;
+@media (max-width:450px){
+    .bookStorage {
+        grid-template-columns: repeat(1,1fr);
     }
 }
-
