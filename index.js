@@ -45,10 +45,19 @@ function displayBooks(){
     `<div class="bookTitle">${bookLibrary.bookName}</div>
     <div class="bookAuthor">${bookLibrary.author}</div>
     <div class="bookPages">${bookLibrary.pages}</div>
-    <div class="readStatus">${bookLibrary.read}</div>
+    <div class="readStatus" onclick="toggleRead(${i})">${bookLibrary.read ? "Read" : "Not Read"}</div>
     <button onclick="deleteBook(${i})">Delete</button>`;
     bookStorage.append(bookCard)
   }
+}
+
+Book.prototype.toggleRead = function(){
+  this.read = !this.read;
+}
+function toggleRead(index){
+  myLibrary[index].toggleRead();
+  displayBooks()
+  console.log("click")
 }
 
 function deleteBook(index){
